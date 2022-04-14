@@ -245,12 +245,43 @@ input::-moz-placeholder {
 
 /* Стиль для активного элемена */
 .showen {
-	bottom: 0vh;
+	animation-name: move_showen;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
 }
 
+@keyframes move_showen {
+    0% {
+	  bottom: -100vh;
+    }
+    100% {
+      bottom: 0vh;
+    }
+}
+
+
 /* Стиль для спрятанного элемена */
+
 .hidden {
-	bottom: -100vh;
+	animation-name: move_hidden;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes move_hidden {
+    0% {
+	  bottom: 0vh;
+    }
+    
+    100% {
+        bottom: -100vh;
+    }
 }
 
 .keyboard {
@@ -260,6 +291,7 @@ input::-moz-placeholder {
 	align-items: center;
 	position: fixed;
 	transition: 0s ease-in-out;
+	/*transition: 0.2s ease-out;*/
 	box-shadow: 0 0 10px rgb(0 0 0 / 50%);
 	margin-bottom: calc(100vh - 688px);
 }
